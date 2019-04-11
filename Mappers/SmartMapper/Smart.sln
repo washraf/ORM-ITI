@@ -3,21 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{568B3FB7-06E1-43D9-979C-57A882E65ED7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helpers", "Helpers\Helpers.csproj", "{B71FCBD1-5678-43A9-AE1D-77CE70D3AFA8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Smart", "Smart", "{45AF9236-F096-44B7-83BC-DE56FAE70845}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Client", "Smart.Client\Smart.Client.csproj", "{8FEDB9D4-3AFD-4EB3-B933-4C4FCD993EFE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dummy", "Dummy", "{3A057996-DDE9-4374-94A5-72BFE405570C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Classes", "Smart.Classes\Smart.Classes.csproj", "{EAF2D683-857B-45F0-99A6-5325D336AF0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers", "Helpers\Helpers.csproj", "{B71FCBD1-5678-43A9-AE1D-77CE70D3AFA8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dummy.Client", "Dummy.Client\Dummy.Client.csproj", "{76A55988-F43E-437E-92BC-9E39E53FD9D2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.Client", "Smart.Client\Smart.Client.csproj", "{8FEDB9D4-3AFD-4EB3-B933-4C4FCD993EFE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.Classes", "Smart.Classes\Smart.Classes.csproj", "{EAF2D683-857B-45F0-99A6-5325D336AF0D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartMapper", "SmartMapper\SmartMapper.csproj", "{35FFBBFF-8E86-48AC-9D80-1338C0408D76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartMapper", "SmartMapper\SmartMapper.csproj", "{35FFBBFF-8E86-48AC-9D80-1338C0408D76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +21,6 @@ Global
 		{B71FCBD1-5678-43A9-AE1D-77CE70D3AFA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B71FCBD1-5678-43A9-AE1D-77CE70D3AFA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B71FCBD1-5678-43A9-AE1D-77CE70D3AFA8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{76A55988-F43E-437E-92BC-9E39E53FD9D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{76A55988-F43E-437E-92BC-9E39E53FD9D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{76A55988-F43E-437E-92BC-9E39E53FD9D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{76A55988-F43E-437E-92BC-9E39E53FD9D2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8FEDB9D4-3AFD-4EB3-B933-4C4FCD993EFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8FEDB9D4-3AFD-4EB3-B933-4C4FCD993EFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FEDB9D4-3AFD-4EB3-B933-4C4FCD993EFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -48,13 +36,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{B71FCBD1-5678-43A9-AE1D-77CE70D3AFA8} = {568B3FB7-06E1-43D9-979C-57A882E65ED7}
-		{76A55988-F43E-437E-92BC-9E39E53FD9D2} = {3A057996-DDE9-4374-94A5-72BFE405570C}
-		{8FEDB9D4-3AFD-4EB3-B933-4C4FCD993EFE} = {45AF9236-F096-44B7-83BC-DE56FAE70845}
-		{EAF2D683-857B-45F0-99A6-5325D336AF0D} = {45AF9236-F096-44B7-83BC-DE56FAE70845}
-		{35FFBBFF-8E86-48AC-9D80-1338C0408D76} = {45AF9236-F096-44B7-83BC-DE56FAE70845}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {227134B2-FF99-4B26-A99D-2102E71B1351}
