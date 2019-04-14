@@ -10,7 +10,7 @@ namespace DataBaseDemo.Graph
             : base(resolver)
         {
             Query = resolver.Resolve<InventoryQuery>();
-            //Mutation = resolver.Resolve<InventoryMutation>();
+            Mutation = resolver.Resolve<InventoryMutation>();
         }
 
     }

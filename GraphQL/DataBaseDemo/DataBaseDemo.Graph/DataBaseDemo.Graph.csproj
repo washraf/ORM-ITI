@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="GraphQL" Version="2.4.0" />
+    <PackageReference Include="GraphQL.FluentValidation" Version="0.4.1" />
   </ItemGroup>
 
   <ItemGroup>

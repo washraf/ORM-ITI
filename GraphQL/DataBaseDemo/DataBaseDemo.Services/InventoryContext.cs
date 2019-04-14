@@ -13,9 +13,8 @@ namespace DataBaseDemo.Services
     /// </summary>
     public class InventoryContext : DbContext
     {
-
-
-        private const string connectionString = "Server=(localdb)\\mssqllocaldb;Database=GraphQLDB;Trusted_Connection=True;";
+        private const string connectionString 
+            = "Server=(localdb)\\mssqllocaldb;Database=GraphQLDB;Trusted_Connection=True;";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

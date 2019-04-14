@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DataBaseDemo.Graph;
+using DataBaseDemo.Graph.Filter;
+using DataBaseDemo.Graph.InputTypes;
 using DataBaseDemo.Graph.Query;
 using DataBaseDemo.Graph.Types;
 using DataBaseDemo.Services;
@@ -38,15 +40,20 @@ namespace DataBaseDemo.API
 
             services.AddSingleton<InventoryContext>();
             services.AddSingleton<ItemType>();
-            //services.AddSingleton<ItemInputType>();
+            services.AddSingleton<ItemInputType>();
 
             services.AddSingleton<OrderType>();
             services.AddSingleton<CustomerType>();
+            services.AddSingleton<CustomerInput>();
+            services.AddSingleton<CustomerQueryFilter>();
+            services.AddSingleton<OrderInput>();
+            services.AddSingleton<OrderItemInput>();
+
 
             services.AddSingleton<OrderItemType>();
 
             services.AddSingleton<InventoryQuery>();
-            //services.AddSingleton<InventoryMutation>();
+            services.AddSingleton<InventoryMutation>();
             services.AddSingleton<InventorySchema>();
         }
 

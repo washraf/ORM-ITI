@@ -1,7 +1,9 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using DataBaseDemo.Graph;
+using DataBaseDemo.Graph.Validators;
 using GraphQL;
+using GraphQL.FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DataBaseDemo.API.Controllers
@@ -18,12 +20,19 @@ namespace DataBaseDemo.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] GraphQlQuery query)
         {
-            var result = await new DocumentExecuter().ExecuteAsync(x =>
+            var validatorTypeCache = new ValidatorTypeCache();
+            validatorTypeCache.
+                AddValidatorsFromAssemblyContaining(typeof(ItemValidator));
+
+            var options = new ExecutionOptions
             {
-                x.Schema = schema;
-                x.Query = query.Query;
-                x.Inputs = query.Variables.ToInputs();
-            });
+                Schema = schema,
+                Query = query.Query,
+                Inputs = query.Variables.ToInputs()
+            };
+            options.UseFluentValidation(validatorTypeCache);
+
+            var result = await new DocumentExecuter().ExecuteAsync(options);
             if (result.Errors?.Count > 0)
             {
                 return BadRequest(result.Errors);
