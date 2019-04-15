@@ -20,6 +20,12 @@ namespace DataBaseDemo.Graph.Types
                     .Where(x=>x.CustomerId == ctx.Source.Id)
                     .ToList();
                 });
+            Field<StringGraphType>()
+                .Name("History")
+                .Resolve(ctx => {
+                    return "The history of customer "+ctx.Source.Id;
+
+                });
         }
     }
 }

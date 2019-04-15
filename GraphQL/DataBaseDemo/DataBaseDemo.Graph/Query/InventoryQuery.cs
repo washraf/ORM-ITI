@@ -33,7 +33,7 @@ namespace DataBaseDemo.Graph.Query
             Field<ListGraphType<CustomerType>>(
                 "Customers",
                 arguments: new QueryArguments
-                (new QueryArgument<NonNullGraphType<CustomerQueryFilter>>
+                (new QueryArgument<CustomerQueryFilter>
                 { Name = "filter" }),
                 resolve:(ctx =>
                 {
