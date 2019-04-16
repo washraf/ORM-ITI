@@ -22,7 +22,8 @@ namespace BasicDemoII.Model
             Field<ListGraphType<OrderItemType>,
                 IEnumerable<OrderItem>>()
                 .Name("OrderItems").Resolve(ctx => 
-                ctx.Source.OrderItems);
+                ctx.Source.OrderItems
+                .Where(x=>x.OrderId == ctx.Source.OrderId));
                 
                 
         }

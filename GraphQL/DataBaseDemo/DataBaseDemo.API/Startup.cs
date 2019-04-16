@@ -35,26 +35,26 @@ namespace DataBaseDemo.API
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddSingleton<IDependencyResolver>
+            services.AddScoped<IDependencyResolver>
                 (s => new FuncDependencyResolver(s.GetRequiredService));
 
-            services.AddSingleton<InventoryContext>();
-            services.AddSingleton<ItemType>();
-            services.AddSingleton<ItemInputType>();
+            services.AddScoped<InventoryContext>();
+            services.AddScoped<ItemType>();
+            services.AddScoped<ItemInputType>();
 
-            services.AddSingleton<OrderType>();
-            services.AddSingleton<CustomerType>();
-            services.AddSingleton<CustomerInput>();
-            services.AddSingleton<CustomerQueryFilter>();
-            services.AddSingleton<OrderInput>();
-            services.AddSingleton<OrderItemInput>();
+            services.AddScoped<OrderType>();
+            services.AddScoped<CustomerType>();
+            services.AddScoped<CustomerInput>();
+            services.AddScoped<CustomerQueryFilter>();
+            services.AddScoped<OrderInput>();
+            services.AddScoped<OrderItemInput>();
 
 
-            services.AddSingleton<OrderItemType>();
+            services.AddScoped<OrderItemType>();
 
-            services.AddSingleton<InventoryQuery>();
-            services.AddSingleton<InventoryMutation>();
-            services.AddSingleton<InventorySchema>();
+            services.AddScoped<InventoryQuery>();
+            services.AddScoped<InventoryMutation>();
+            services.AddScoped<InventorySchema>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

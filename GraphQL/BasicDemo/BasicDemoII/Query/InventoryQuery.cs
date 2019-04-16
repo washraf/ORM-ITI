@@ -20,6 +20,7 @@ namespace BasicDemoII.Query
                     return dataSource.GetItemByBarcode(barcode);
                 }
             );
+
             Field<ListGraphType<ItemType>>(
                 "items",
                 resolve: context =>
@@ -27,6 +28,7 @@ namespace BasicDemoII.Query
                     return dataSource.GetItems();
                 }
             );
+                                          
             Field<ListGraphType<OrderType>, IEnumerable<Order>>()
                 .Name("Orders")
                 .Resolve(ctx =>

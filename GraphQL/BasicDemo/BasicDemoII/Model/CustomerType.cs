@@ -7,6 +7,7 @@ namespace BasicDemoII.Model
     {
         public CustomerType(DataSource dataSource)
         {
+            Field(c => c.CustomerId);
             Field(c => c.Name);
             Field(c => c.BillingAddress);
             Field<ListGraphType<OrderType>, IEnumerable<Order>>()

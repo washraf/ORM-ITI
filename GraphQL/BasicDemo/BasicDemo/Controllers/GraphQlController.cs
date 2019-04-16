@@ -25,7 +25,7 @@ namespace BasicDemo.Controllers
             });
             if (result.Errors?.Count > 0)
             {
-                return BadRequest();
+                return BadRequest(result.Errors);
             }
             return Ok(result);
         }
