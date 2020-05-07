@@ -15,7 +15,7 @@ namespace TPH.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
+                .HasAnnotation("ProductVersion", "3.1.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -23,16 +23,21 @@ namespace TPH.Migrations
                 {
                     b.Property<int>("CourseId")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CourseName");
+                    b.Property<string>("CourseName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Discriminator")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("Price");
+                    b.Property<float>("Price")
+                        .HasColumnType("real");
 
-                    b.Property<DateTime?>("StartDate");
+                    b.Property<DateTime?>("StartDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("CourseId");
 
@@ -45,7 +50,8 @@ namespace TPH.Migrations
                 {
                     b.HasBaseType("TPH.Course");
 
-                    b.Property<string>("Location");
+                    b.Property<string>("Location")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasDiscriminator().HasValue("LabCourse");
                 });
@@ -54,7 +60,8 @@ namespace TPH.Migrations
                 {
                     b.HasBaseType("TPH.Course");
 
-                    b.Property<bool>("SelfPaced");
+                    b.Property<bool>("SelfPaced")
+                        .HasColumnType("bit");
 
                     b.HasDiscriminator().HasValue("OnlineCourse");
                 });

@@ -25,7 +25,7 @@ namespace DataBaseDemo.Client
 		                }
 	                }" };
             var graphQLClient = 
-                new GraphQLHttpClient("http://localhost:62338/graphql");
+                new GraphQLHttpClient("http://localhost:44382/graphql");
             var graphQLResponse = await graphQLClient.SendQueryAsync(request);
             //Dynamic
             var dynamicitems = graphQLResponse.Data.items;

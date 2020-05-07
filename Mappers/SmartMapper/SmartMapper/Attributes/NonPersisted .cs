@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SmartMapper.Attributes
 {
+    /// <summary>
+    /// Computed Column (Don't Save)
+    /// </summary>
     public class NonPersisted:Attribute
     {
         

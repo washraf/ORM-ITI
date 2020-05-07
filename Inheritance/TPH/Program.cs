@@ -6,8 +6,8 @@ namespace TPH
 {
     class Program
     {
-        //dotnet ef migrations add InitialCreate --project TPH
-        //dotnet ef database update --project TPH
+        //Add-Migration InitialCreate
+        //update-database
         static void Main(string[] args)
         {
             using (var context = new TPHContext())

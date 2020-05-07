@@ -31,7 +31,7 @@ namespace DataMapper
             reader.Close();
             return new Student()
             {
-                Id = Convert.ToInt32(result[0]),
+                Id = Convert.ToInt64(result[0]),
                 Name = result[1].ToString()
             };
         }
@@ -47,7 +47,7 @@ namespace DataMapper
             {
                 students.Add(new Student()
                 {
-                    Id = Convert.ToInt32(dt.Rows[i][0]),
+                    Id = Convert.ToInt64(dt.Rows[i][0]),
                     Name = dt.Rows[i][1].ToString()
                 });
             }

@@ -12,6 +12,10 @@ using SmartMapper.Attributes;
 
 namespace SmartMapper
 {
+    /// <summary>
+    /// Entity Mapper is a generic mapper between the DB classes and Types
+    /// </summary>
+    /// <typeparam name="TEntityType"></typeparam>
     public class EntityMapper<TEntityType> where TEntityType:class, new()
     {
         private SqlConnection _connection;

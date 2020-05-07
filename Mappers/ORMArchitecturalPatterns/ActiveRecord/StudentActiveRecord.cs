@@ -10,7 +10,7 @@ namespace ActiveRecord
         
         private static readonly SqlConnection Con = new SqlConnection("Data Source=.;Initial Catalog=ORMPatterns;Integrated Security=True");
         
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
 
 
@@ -49,7 +49,7 @@ namespace ActiveRecord
             reader.Close();
             return new StudentActiveRecord()
             {
-                Id = Convert.ToInt32(result[0]),
+                Id = Convert.ToInt64(result[0]),
                 Name = result[1].ToString()
             };
         }
@@ -67,7 +67,7 @@ namespace ActiveRecord
             {
                 students.Add(new StudentActiveRecord()
                 {
-                    Id = Convert.ToInt32(dt.Rows[i][0]),
+                    Id = Convert.ToInt64(dt.Rows[i][0]),
                     Name = dt.Rows[i][1].ToString()
                 });
             }
@@ -85,7 +85,7 @@ namespace ActiveRecord
             {
                 students.Add(new StudentActiveRecord()
                 {
-                    Id = Convert.ToInt32(dt.Rows[i][0]),
+                    Id = Convert.ToInt64(dt.Rows[i][0]),
                     Name = dt.Rows[i][1].ToString()
                 });
             }

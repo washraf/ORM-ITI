@@ -33,7 +33,14 @@ namespace Smart.Client
             ss.Name = "Ahmed";
             context.Students.Update(ss);
 
-
+            context.Courses.Add(new Course()
+            {
+                CourseName = "ORM",
+                CourseContents = "ORM",
+                CourseDescription = "ORM",
+                CourseDuration = 2,
+            });
+            
             List<Course> course = context.Courses.Find(x => x.Course_ID > 0).ToList();
             foreach (var s in course)
             {
@@ -41,7 +48,7 @@ namespace Smart.Client
                 Console.Write("\t");
                 Console.Write(s.CourseName);
                 Console.WriteLine();
-                Console.WriteLine(s.Intakes.First().course.Course_ID);
+                Console.WriteLine(s.Intakes.FirstOrDefault()?.course.Course_ID);
             }
         }
     }

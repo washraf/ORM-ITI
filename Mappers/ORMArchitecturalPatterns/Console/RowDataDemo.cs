@@ -22,7 +22,7 @@ namespace Console
                 y = System.Console.ReadLine()[0];
 
             } while (y == 'y');
-            var students = StudentRowGateway.GetAll();
+            var students = StudentFinder.GetAll();
 
             foreach (var student in students)
             {

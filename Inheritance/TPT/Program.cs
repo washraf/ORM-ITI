@@ -5,8 +5,8 @@ namespace TPT
 {
     class Program
     {
-        //dotnet ef migrations add InitialCreate --project TPT
-        //dotnet ef database update --project TPT
+        //Add-Migration InitialCreate
+        //update-database
         static void Main(string[] args)
         {
             using (var context = new TPTContext())

@@ -13,6 +13,10 @@ using SmartMapper.Attributes;
 
 namespace SmartMapper
 {
+    /// <summary>
+    /// Equivilent of the DBSet in EF
+    /// </summary>
+    /// <typeparam name="TEntityType"></typeparam>
     public class TableSet<TEntityType> where TEntityType : class,new()
     {
         private SqlConnection _connection;
