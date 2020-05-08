@@ -11,7 +11,7 @@
         {
             //TableDataDemo.Run();
             //RowDataDemo.Run();
-            //ActiveRecordDemo.Run();
+            ActiveRecordDemo.Run();
             //MapperDemo.Run();
         }
 

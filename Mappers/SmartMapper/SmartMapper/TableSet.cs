@@ -121,8 +121,7 @@ namespace SmartMapper
 
             return SqlHelpers.Update(_connection, cmd, sqlParameters);
         }
-        public IEnumerable<TEntityType> 
-            Find(Expression<Func<TEntityType, bool>> predicate)
+        public IEnumerable<TEntityType> Find(Expression<Func<TEntityType, bool>> predicate)
         {
             // hacks all the way
             dynamic operation = predicate.Body;

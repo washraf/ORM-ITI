@@ -11,7 +11,7 @@ namespace Smart.Client
         {
             Context context = new Context("Data Source =.; Initial Catalog = ORMMappers; Integrated Security = True");
 
-            IEnumerable<Student> students = context.Students.GetAll();
+            IEnumerable<Student> students = context.Students.Find(x => x.Student_ID > 1);
             foreach (var s in students)
             {
                 Console.Write(s.Student_ID);
