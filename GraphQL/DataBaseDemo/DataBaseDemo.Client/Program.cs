@@ -17,6 +17,7 @@ namespace DataBaseDemo.Client
         {
             method().Wait();
         }
+
         public async static Task method()
         {
             var request = new GraphQLRequest()
@@ -28,7 +29,7 @@ namespace DataBaseDemo.Client
             var graphQLClient = 
                 new GraphQLHttpClient
                 ("https://localhost:44382/graphql", new NewtonsoftJsonSerializer());
-            var graphQLResponse = await graphQLClient.SendQueryAsync<Response>(request);
+            var graphQLResponse = await graphQLClient.SendQueryAsync<ItemsResponse>(request);
             var response = graphQLResponse.Data;
             
             foreach (var item in response.Items)
@@ -39,7 +40,7 @@ namespace DataBaseDemo.Client
 
     }
 
-    public class Response
+    public class ItemsResponse
     {
         public List<SimpleItem> Items = new List<SimpleItem>();
     }
