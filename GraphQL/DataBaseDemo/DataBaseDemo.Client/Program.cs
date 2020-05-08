@@ -1,12 +1,13 @@
-﻿using DataBaseDemo.Model;
+﻿using GraphQL;
 using GraphQL.Client;
+using GraphQL.Client.Abstractions;
 using GraphQL.Client.Http;
-using GraphQL.Common.Request;
 using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-
+using GraphQL.Client.Serializer.Newtonsoft;
+using System.Text.Json;
 
 namespace DataBaseDemo.Client
 {
@@ -25,20 +26,28 @@ namespace DataBaseDemo.Client
 		                }
 	                }" };
             var graphQLClient = 
-                new GraphQLHttpClient("http://localhost:44382/graphql");
-            var graphQLResponse = await graphQLClient.SendQueryAsync(request);
-            //Dynamic
-            var dynamicitems = graphQLResponse.Data.items;
-            //Typed
-            var items = graphQLResponse.GetDataFieldAs<List<Item>>("items");
-            foreach (var item in items)
+                new GraphQLHttpClient
+                ("https://localhost:44382/graphql", new NewtonsoftJsonSerializer());
+            var graphQLResponse = await graphQLClient.SendQueryAsync<Response>(request);
+            var response = graphQLResponse.Data;
+            
+            foreach (var item in response.Items)
             {
-                Console.WriteLine(item.Id);
-                Console.WriteLine(item.Title);
-
+                Console.WriteLine($"Item {item.Id}:{item.Title}");
             }
         }
 
+    }
+
+    public class Response
+    {
+        public List<SimpleItem> Items = new List<SimpleItem>();
+    }
+
+    public class SimpleItem
+    {
+        public int Id { set; get; }
+        public string Title { set; get; }
     }
     
 }

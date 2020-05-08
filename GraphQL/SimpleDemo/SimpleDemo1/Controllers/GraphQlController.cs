@@ -15,14 +15,14 @@ namespace SimpleDemo1.Controllers
         {
         }
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] GraphQlQuery query)
+        public async Task<IActionResult> Post([FromBody] GraphQlQuery userQuery)
         {
             var schema = new Schema { Query = new HelloWorldQuery() };
             var result = await new DocumentExecuter().ExecuteAsync(x =>
             {
                 x.Schema = schema;
-                x.Query = query.Query;
-                x.Inputs = query.Variables;
+                x.Query = userQuery.Query;
+                x.Inputs = userQuery.Variables;
             });
             if (result.Errors?.Count > 0)
             {

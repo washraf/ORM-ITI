@@ -8,8 +8,8 @@ namespace DataBaseDemo.Services
 {
 
     /// <summary>
-    /// dotnet ef migrations add InitialCreate --project DataBaseDemo.Services
-    /// dotnet ef database update --project DataBaseDemo.Services
+    /// Add-Migrations InitialCreate
+    /// Update-DB
     /// </summary>
     public class InventoryContext : DbContext
     {
